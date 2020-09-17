@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SUM_OF_MULTIPLIER
@@ -24,10 +20,8 @@ namespace SUM_OF_MULTIPLIER
                 int input = Int32.Parse(InputTxtBox.Text);
                 InputValidator.CheckRange(input);
 
-
                 OutputLbl1.Text = ($"Method1 - Sum of % 3 or 5 by {input} equals to: {FindSumOfMultiple1(input)}");
                 OutputLbl2.Text = ($"Method2 - Sum of % 3 or 5 by {input} equals to: {FindSumOfMultiple2(input)}");
-
             }
             catch (FormatException ex)
             {
@@ -40,7 +34,6 @@ namespace SUM_OF_MULTIPLIER
                 MessageBox.Show($"Critical error. Try again.", "Critical error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 InputTxtBox.Focus();
             }
-            
         }
         public string FindSumOfMultiple1(int input)
         {
@@ -66,7 +59,6 @@ namespace SUM_OF_MULTIPLIER
             }
             return sum.ToString("N0");
         }
-
         private void InputTxtBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
